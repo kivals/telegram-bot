@@ -7,7 +7,7 @@ const kb = require('./keyboard-buttons');
 
 helper.logStart();
 
-mongoose.connect(config.DB_URL).then(() => {
+mongoose.connect(config.DB_URL,  { useNewUrlParser: true, useUnifiedTopology: true }).then(() => {
   console.log('MongoDb connected')
 }).catch(err => {
   console.log(err)
